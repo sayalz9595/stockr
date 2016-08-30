@@ -36,3 +36,6 @@ I would like to be able to send them a notification
 - customer
   name
   email
+
+
+  ![alt text] (https://raw.githubusercontent.com/SamedYalniz/stockr/add_diagram_to_readme/diagram.jpg "diagram of user perspectives")
