@@ -37,5 +37,6 @@ I would like to be able to send them a notification
   name
   email
 
-
 ![what_is_in_stock](https://cloud.githubusercontent.com/assets/18379191/18093101/b4aa367a-6ec6-11e6-93f1-9f8ed8e988e9.png)
+
+![what_is_in_stock](https://cloud.githubusercontent.com/assets/9626479/18095879/4f7cb368-6ed0-11e6-88e8-7039f748f364.jpg)
