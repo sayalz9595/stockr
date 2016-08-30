@@ -36,3 +36,6 @@ I would like to be able to send them a notification
 - customer
   name
   email
+
+
+![what_is_in_stock](https://cloud.githubusercontent.com/assets/18379191/18093101/b4aa367a-6ec6-11e6-93f1-9f8ed8e988e9.png)
