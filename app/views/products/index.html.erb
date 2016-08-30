@@ -1,0 +1,9 @@
+<% if @products.any? %>
+  <% @products.each do |product| %>
+    <%= product.name %>
+  <% end %>
+<% end %>
+
+
+
+<%= link_to 'Add a product', new_product_path %>
