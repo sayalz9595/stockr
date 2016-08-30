@@ -4,13 +4,8 @@ feature "sign in" do
 
   context "user doesn't have an account" do
 
-    scenario "user can can see sign up link" do
-      visit "/"
-      expect(page).to have_link "Sign up"
-    end
-
     scenario "user is directed to sign up form after trying to log in" do
-      visit "/users/sign_in"
+      visit "/"
       fill_in "Email", with: "samedsdad@mail.com"
       fill_in "Password", with: "password"
       click_button "Log in"
@@ -18,12 +13,13 @@ feature "sign in" do
     end
 
     scenario "user can sign up using form" do
-      visit "/users/sign_up"
+      visit "/"
+      click_link "Sign up"
       fill_in "Email", with: "samedsdad@mail.com"
       fill_in "Password", with: "password"
       fill_in "Password confirmation", with: "password"
       click_button "Sign up"
-      expect(page).to have_content "Currently signed in as samedsdad@gmail.com"
+      expect(page).to have_content "Currently signed in as samedsdad@mail.com"
     end
   end
 
@@ -38,16 +34,16 @@ feature "sign in" do
     end
 
     scenario "user can login" do
-      click_link "Sign out"
-      visit "/users/sign_in"
+      click_link "Logout"
+      visit "/"
       fill_in "Email", with: "samedsdad@mail.com"
       fill_in "Password", with: "password"
       click_button "Log in"
-      expect(page).to have_content "Currently signed in as samedsdad@gmail.com"
+      expect(page).to have_content "Currently signed in as samedsdad@mail.com"
     end
 
     scenario "user can see sign out link" do
-      expect(page).to have_link "Sign out"
+      expect(page).to have_link "Logout"
     end
   end
 end
