@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let( :user ) {User.create(email: 'test@test.com') }
+
+  it 'sends a stock update email' do
+    expect { user.stock_update }
+    .to change  { ActionMailer::Base.deliveries.count }.by(1)
+  end
+  
 end
