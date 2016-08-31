@@ -1,0 +1,6 @@
+<br>
+<% @products.each do |product| %>
+  <%= check_box_tag "stock[]", product %>
+  <%= product.name %>
+  <br>
+<% end %>
