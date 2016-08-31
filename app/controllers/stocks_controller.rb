@@ -9,4 +9,16 @@ def new
   @stock = Stock.new
 end
 
+def create
+  @stock = stock_params.values.flatten.reject(&:empty?)
+  @stock.each do |item|
+    Stock.create(product_id: item)
+  end
+  redirect_to "/"
+end
+
+private
+   def stock_params
+     params.require(:stock).permit(product_id: [])
+   end
 end
