@@ -15,7 +15,7 @@ feature 'customer' do
     expect(page).to have_content('damlabaklavalari@gmail.com')
     expect(page).not_to have_content("damla@gmail.com")
   end
-
+  
   scenario 'logged in user can delete a customer' do
     create_customer
     click_link 'Delete Damla Baklavalari'
