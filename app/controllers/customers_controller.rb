@@ -23,7 +23,10 @@ class CustomersController < ApplicationController
     @customer.update(customer_params)
     redirect_to user_customers_path
   end
-
+  def send_stock_update
+    current_user.stock_update
+    redirect_to user_customers_path
+  end
 
 
 
