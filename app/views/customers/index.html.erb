@@ -1,0 +1,10 @@
+<% if current_user.customers.any? %>
+  <% current_user.customers.each do |customer| %>
+    <%= customer.name %>
+    <%= customer.email %>
+    <%= link_to "Edit #{customer.name}", edit_user_customer_path(current_user, customer)%>
+  <% end %>
+<% end %>
+
+
+<%= link_to 'Add a customer', new_user_customer_path(current_user) %>
