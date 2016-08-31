@@ -7,5 +7,7 @@ RSpec.describe User, type: :model do
     expect { user.stock_update }
     .to change  { ActionMailer::Base.deliveries.count }.by(1)
   end
-  
+
+
+  it {is_expected.to have_many :customers}
 end
