@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def stock_update
-    CustomerMailer.stock_update.deliver_now
+    CustomerMailer.stock_update(self).deliver_now
   end
   has_many :customers, dependent: :destroy
 end
