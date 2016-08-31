@@ -14,10 +14,6 @@ Rails.application.routes.draw do
 
   resources :products
   resources :stocks
-<<<<<<< HEAD
-
-=======
->>>>>>> b2acbee893951ed00ccbbe5032a2d2a4cc7992eb
   resources :users do
     resources :customers do
       member do
