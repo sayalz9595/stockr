@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load',function() {
   $("#selectAll").click(function(){
     if ($(this).is(":checked")) {
       $(":checkbox").each(function(){
@@ -12,6 +12,8 @@ $(document).ready(function(){
     }
   });
 });
+
+
 
 // OR
 
