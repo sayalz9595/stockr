@@ -3,6 +3,7 @@
     <%= customer.name %>
     <%= customer.email %>
     <%= link_to "Edit #{customer.name}", edit_user_customer_path(current_user, customer)%>
+    <%= link_to "Delete #{customer.name}", user_customer_path(current_user, customer), method: :delete %>
   <% end %>
 <% end %>
 

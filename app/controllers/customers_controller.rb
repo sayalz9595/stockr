@@ -14,7 +14,7 @@ class CustomersController < ApplicationController
 
   def edit
     @user = current_user
-    @customer = @user.customers.find(params[:id])
+    find_customer
   end
 
   def update
@@ -24,7 +24,12 @@ class CustomersController < ApplicationController
     redirect_to user_customers_path
   end
 
-
+  def destroy
+    @user = current_user
+    find_customer
+    @customer.destroy
+    redirect_to user_customers_path
+  end
 
 
   private
