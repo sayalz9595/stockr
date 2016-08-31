@@ -13,3 +13,12 @@ def login(email="samedsdad@mail.com")
   fill_in "Password", with: "password"
   click_button "Login"
 end
+
+def create_customer
+  sign_up
+  click_link 'Customer List'
+  click_link 'Add a customer'
+  fill_in 'Name', with: "Damla Baklavalari"
+  fill_in 'Email', with: "damla@gmail.com"
+  click_button 'Create Customer'
+end 

@@ -2,13 +2,17 @@ require 'rails_helper'
 
 feature 'customer' do
   scenario'logged in user can create a customer' do
-    sign_up
-    click_link 'Customer List'
-    click_link 'Add a customer'
-    fill_in 'Name', with: "Damla Baklavalari"
-    fill_in 'Email', with: "damla@gmail.com"
-    click_button 'Create Customer'
+    create_customer
     expect(page).to have_content("Damla Baklavalari")
     expect(page).to have_content("damla@gmail.com")
+  end
+
+  scenario'logged in user can edit a customer' do
+    create_customer
+    click_link 'Edit Damla Baklavalari'
+    fill_in 'Email', with: 'damlabaklavalari@gmail.com'
+    click_button 'Update Customer'
+    expect(page).to have_content('damlabaklavalari@gmail.com')
+    expect(page).not_to have_content("damla@gmail.com")
   end
 end

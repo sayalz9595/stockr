@@ -12,9 +12,27 @@ class CustomersController < ApplicationController
     redirect_to user_customers_path
   end
 
+  def edit
+    @user = current_user
+    @customer = @user.customers.find(params[:id])
+  end
+
+  def update
+    @user = current_user
+    find_customer
+    @customer.update(customer_params)
+    redirect_to user_customers_path
+  end
+
+
+
 
   private
   def customer_params
     params.require(:customer).permit(:name, :email)
+  end
+
+  def find_customer
+    @customer = @user.customers.find(params[:id])
   end
 end
