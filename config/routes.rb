@@ -11,9 +11,14 @@ Rails.application.routes.draw do
     end
   end
 
+
   resources :products
   resources :stocks
   resources :users do
-    resources :customers
+    resources :customers do
+      member do
+        get 'send_stock_update' => 'customers#send_stock_update'
+      end
+    end
   end
 end
