@@ -1,6 +1,10 @@
 <h1> Range of products </h1>
 
+
 <%= link_to 'Add a product', new_user_product_path(current_user) %>
+<%= link_to "View products", user_products_path(current_user) %>
+
+
 
 <h1> Stock list </h1>
 <%= link_to "Current stock", user_stocks_path(current_user) %>

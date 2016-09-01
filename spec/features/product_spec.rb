@@ -31,4 +31,15 @@ feature 'product' do
     add_product
     expect(page).not_to have_content("Orange")
   end
+  scenario "user can search for a product" do
+    sign_up
+    add_product(product: "Banana")
+    add_product(product: "Apple")
+    add_product(product: "Potato")
+    fill_in "search", with: "Banana"
+    click_button "Search"
+    expect(page).to have_content "Banana"
+    expect(page).to_not have_content "Apple"
+    expect(page).to_not have_content "Potato"
+  end
 end

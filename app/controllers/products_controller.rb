@@ -1,6 +1,10 @@
 class ProductsController < ApplicationController
   def index
-
+    if params[:search]
+      @products = current_user.products.search(params[:search])
+    else
+      @products = current_user.products
+    end
   end
 
   def new
