@@ -1,3 +1,8 @@
+<%= form_tag(products_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search products" %>
+<%= submit_tag "Search" %>
+<% end %>
+
 <% if @products.any? %>
   <% @products.each do |product| %>
     <%= product.name %>
