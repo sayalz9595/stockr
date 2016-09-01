@@ -1,20 +1,20 @@
 class ProductsController < ApplicationController
   def index
     if params[:search]
-      @products = Product.search(params[:search])
+      @products = current_user.products.search(params[:search])
     else
-      @products = Product.all
+      @products = current_user.products
     end
   end
 
   def new
-    @product = Product.new
+    @product = current_user.products.build
   end
 
   def create
-    @product = Product.create(product_params)
+    @product = current_user.products.create(product_params)
     if @product.save
-      redirect_to products_path
+      redirect_to user_products_path
     else
       render "new"
     end
@@ -27,13 +27,13 @@ class ProductsController < ApplicationController
   def update
     find_product
     @product.update(product_params)
-    redirect_to products_path
+    redirect_to user_products_path
   end
 
   def destroy
     find_product
     @product.destroy
-    redirect_to products_path
+    redirect_to user_products_path
   end
 
   private

@@ -1,15 +1,15 @@
-<%= form_tag(products_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search products" %>
-<%= submit_tag "Search" %>
+<%= form_tag(user_products_path(current_user), :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search products" %>
+  <%= submit_tag "Search" %>
 <% end %>
 
 <% if @products.any? %>
   <% @products.each do |product| %>
     <%= product.name %>
-    <%= link_to "Edit #{product.name}", edit_product_path(product) %>
-    <%= link_to "Delete #{product.name}", product_path(product), method: :delete %>
+    <%= link_to "Edit #{product.name}", edit_user_product_path(current_user, product) %>
+    <%= link_to "Delete #{product.name}", user_product_path(current_user, product), method: :delete %>
   <% end %>
 <% end %>
 
 
-<%= link_to 'Add a product', new_product_path %>
+<%= link_to 'Add a product', new_user_product_path %>

@@ -9,5 +9,6 @@ RSpec.describe User, type: :model do
   end
 
 
-  it {is_expected.to have_many :customers}
+  it { is_expected.to have_many :customers }
+  it { is_expected.to have_one :stock }
 end
