@@ -20,4 +20,15 @@ feature "updating stock" do
       expect(page).to have_content("Potato")
     end
   end
+
+  context "select all checkboxes" do
+    scenario "all boxes unchecked upon page load" do
+      Product.create(name:'Apple')
+      Product.create(name:'Potato')
+      sign_up
+      click_link "Add stock"
+      all = all('input[type=checkbox]')
+      expect(page.has_checked_field?(all)).to be false
+    end
+  end
 end
