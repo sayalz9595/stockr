@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
     CustomerMailer.stock_update(self).deliver_now
   end
   has_many :customers, dependent: :destroy
+  has_many :products, dependent: :destroy
 end

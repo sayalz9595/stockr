@@ -1,10 +1,10 @@
-<% if @products.any? %>
-  <% @products.each do |product| %>
+<% if current_user.products.any? %>
+  <% current_user.products.each do |product| %>
     <%= product.name %>
-    <%= link_to "Edit #{product.name}", edit_product_path(product) %>
-    <%= link_to "Delete #{product.name}", product_path(product), method: :delete %>
+    <%= link_to "Edit #{product.name}", edit_user_product_path(current_user, product) %>
+    <%= link_to "Delete #{product.name}", user_product_path(current_user, product), method: :delete %>
   <% end %>
 <% end %>
 
 
-<%= link_to 'Add a product', new_product_path %>
+<%= link_to 'Add a product', new_user_product_path %>
