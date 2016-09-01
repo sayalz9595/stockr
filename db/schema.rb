@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901120232) do
+ActiveRecord::Schema.define(version: 20160901150612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,29 +26,26 @@ ActiveRecord::Schema.define(version: 20160901120232) do
 
   add_index "customers", ["user_id"], name: "index_customers_on_user_id", using: :btree
 
-  create_table "items", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
+    t.integer  "stock_id"
   end
 
+  add_index "products", ["stock_id"], name: "index_products_on_stock_id", using: :btree
   add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "stocks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
     t.integer  "product_id"
   end
 
   add_index "stocks", ["product_id"], name: "index_stocks_on_product_id", using: :btree
+  add_index "stocks", ["user_id"], name: "index_stocks_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -69,6 +66,8 @@ ActiveRecord::Schema.define(version: 20160901120232) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "customers", "users"
+  add_foreign_key "products", "stocks"
   add_foreign_key "products", "users"
   add_foreign_key "stocks", "products"
+  add_foreign_key "stocks", "users"
 end

@@ -23,8 +23,8 @@ def create_customer
   click_button 'Create Customer'
 end
 
-def add_product
+def add_product(product: "Apple")
   click_link 'Add a product'
-  fill_in 'Name', with: "Apple"
+  fill_in 'Name', with: product
   click_button 'Create Product'
 end

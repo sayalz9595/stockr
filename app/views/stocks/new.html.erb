@@ -1,5 +1,5 @@
 <input type="checkbox" id="selectAll"> Select All </li>
-<%= form_for @stock do |f| %>
-<%= f.collection_check_boxes :product_id, Product.all, :id, :name %>
-<%= f.submit %>
+<%= form_for [current_user, @stock ] do |f| %>
+  <%= f.collection_check_boxes :product_id, current_user.products, :id, :name %>
+  <%= f.submit %>
 <% end %>
