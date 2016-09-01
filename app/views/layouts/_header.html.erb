@@ -1,9 +1,10 @@
-<header class="nav navbar navbar-inverse">
+<header class="nav navbar navbar-default">
   <div class="navbar-class">
     <div class="container">
         <li class="navbar-brand"><%=link_to "Stockr", authenticated_root_path %></li>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
+            <li><a><%= "Currently signed in as #{current_user.email}" %></a></li>
             <li><%=link_to "Sign out", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>

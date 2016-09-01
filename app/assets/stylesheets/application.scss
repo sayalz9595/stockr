@@ -11,6 +11,15 @@
     padding: 15px 35px;
     font-size: 25px;
 }
+
+.navbar-brand a {
+  text-decoration: none;
+  color: #33ccff;
+}
+
+body {
+  background-color: white;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

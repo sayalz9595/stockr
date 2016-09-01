@@ -31,11 +31,17 @@ ActiveRecord::Schema.define(version: 20160901150612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.integer  "stock_id"
   end
 
-  add_index "products", ["stock_id"], name: "index_products_on_stock_id", using: :btree
   add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
+
+  create_table "stocklists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "product_id"
+  end
+
+  add_index "stocklists", ["product_id"], name: "index_stocklists_on_product_id", using: :btree
 
   create_table "stocks", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -66,8 +72,8 @@ ActiveRecord::Schema.define(version: 20160901150612) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "customers", "users"
-  add_foreign_key "products", "stocks"
   add_foreign_key "products", "users"
+  add_foreign_key "stocklists", "products"
   add_foreign_key "stocks", "products"
   add_foreign_key "stocks", "users"
 end
