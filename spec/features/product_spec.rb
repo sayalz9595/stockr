@@ -24,4 +24,16 @@ feature 'product' do
     click_link 'Delete Apple'
     expect(page).not_to have_content("Apple")
   end
+
+  scenario "user can search for a product" do
+    Product.create(name:'Apple')
+    Product.create(name:"Banana")
+    Product.create(name:"Potato")
+    visit '/products'
+    fill_in "search", with: "Banana"
+    click_button "Search"
+    expect(page).to have_content "Banana"
+    expect(page).to_not have_content "Apple"
+    expect(page).to_not have_content "Potato"
+  end
 end
