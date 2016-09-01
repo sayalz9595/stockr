@@ -60,5 +60,4 @@ ActiveRecord::Schema.define(version: 20160831182303) do
 
   add_foreign_key "customers", "users"
   add_foreign_key "stocks", "products"
-
 end

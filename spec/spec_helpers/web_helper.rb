@@ -21,4 +21,19 @@ def create_customer
   fill_in 'Name', with: "Damla Baklavalari"
   fill_in 'Email', with: "damla@gmail.com"
   click_button 'Create Customer'
-end 
+end
+
+def create_product(product = 'turkey')
+  sign_up
+  click_link 'Add a product'
+  fill_in 'Name', with: product
+  click_button 'Create Product'
+end
+
+def create_stock
+  create_product
+  visit '/'
+  click_link 'Add stock'
+  check 'selectAll'
+  click_button 'Create Stock'
+end

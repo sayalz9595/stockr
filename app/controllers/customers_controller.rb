@@ -34,9 +34,11 @@ class CustomersController < ApplicationController
 
   def send_stock_update
     current_user.stock_update
+    if stock_update.can_send == false
+      flash[:notice] = 'You need to add a customer first'
+    end
     redirect_to user_customers_path
   end
-
 
 
 
