@@ -8,6 +8,7 @@ default to: "test@mail.com"
   def stock_update(user)
     @greeting = "Hi"
     @user = user
+    #  byebug
     if @user.customers.any?
 
       mail( to: @user.customers.first.email, subject: "#{@user.email} Stock Update", from: @user.email )
