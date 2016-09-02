@@ -1,24 +1,37 @@
 class StocksController < ApplicationController
 
-def new
-  unless Product.any?
-    redirect_to "/"
-    flash[:notice] = "You must first add your range of products"
+  def index
   end
-  @products = Product.all
-  @stock = Stock.new
-end
 
-def create
-  @stock = stock_params.values.flatten.reject(&:empty?)
-  @stock.each do |item|
-    Stock.create(product_id: item)
+  def new
+    @stock = Stock.new
   end
-  redirect_to "/"
-end
 
-private
-   def stock_params
-     params.require(:stock).permit(product_id: [])
-   end
+  def create
+    @stock = Stock.create(user_id: current_user.id)
+    current_user.stock = @stock
+    store_products_in_stock(@stock)
+    redirect_to user_stocks_path
+  end
+
+  private
+
+  def stock_params
+    params.require(:stock).permit(:user_id, product_id: [])
+  end
+
+  def find_stock
+    @stock = Stock.find(params[:id])
+  end
+
+  def store_products_in_stock(stock)
+    @stock = stock
+    id_array = stock_params.values.flatten.reject(&:empty?)
+    id_array.each do |id|
+      product = current_user.products.find(id)
+
+      @stock.products << product
+    end
+    @stock.save
+  end
 end

@@ -1,3 +1,25 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: left;
+    margin:0 auto;
+    padding: 15px 35px;
+    font-size: 25px;
+}
+
+.navbar-brand a {
+  text-decoration: none;
+  color: #33ccff;
+}
+
+body {
+  background-color: white;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,6 +32,4 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
