@@ -1,5 +1,9 @@
-<input type="checkbox" id="selectAll"> Select All </li>
+<div class="container">
+<input type="checkbox" id="selectAll"> Select All </input>
 <%= form_for [current_user, @stock ] do |f| %>
-  <%= f.collection_check_boxes :product_id, current_user.products, :id, :name %>
+  <%= f.collection_check_boxes(:product_id, current_user.products, :id, :name) do |b|%>
+      <li class="checkbox"><%= b.label(:"data-value" => b.value) { b.check_box + " " +  b.text } %>
+      </li>
+    <% end %>
   <%= f.submit %>
-<% end %>
+<% end %></div>
