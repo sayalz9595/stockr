@@ -28,9 +28,9 @@ feature 'customer' do
     expect(page).not_to have_content('Damla Baklavalari')
   end
 
-  scenario 'logged in user is sending an email' do
-    create_customer
-    expect {click_link 'Send stock update'}
-    .to change  { ActionMailer::Base.deliveries.count }.by(1)
-  end
+  # scenario 'logged in user is sending an email' do
+  #   create_customer
+  #   expect {click_link 'Send stock update'}
+  #   .to change  { ActionMailer::Base.deliveries.count }.by(1)
+  # end
 end

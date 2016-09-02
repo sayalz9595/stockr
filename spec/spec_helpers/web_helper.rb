@@ -1,6 +1,8 @@
 def sign_up(email="samedsdad@mail.com")
   visit "/"
-  click_link "Sign up"
+  within(:css, "li#signup") do
+    click_link('Sign up')
+  end
   fill_in "Email", with: email
   fill_in "Password", with: "password"
   fill_in "Password confirmation", with: "password"
@@ -21,4 +23,10 @@ def create_customer
   fill_in 'Name', with: "Damla Baklavalari"
   fill_in 'Email', with: "damla@gmail.com"
   click_button 'Create Customer'
+end
+
+def add_product(product: "Apple")
+  click_link 'Add a product'
+  fill_in 'Name', with: product
+  click_button 'Create Product'
 end

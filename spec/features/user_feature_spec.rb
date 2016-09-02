@@ -13,12 +13,7 @@ feature "sign in" do
     end
 
     scenario "user can sign up using form" do
-      visit "/"
-      click_link "Sign up"
-      fill_in "Email", with: "samedsdad@mail.com"
-      fill_in "Password", with: "password"
-      fill_in "Password confirmation", with: "password"
-      click_button "Sign up"
+      sign_up
       expect(page).to have_content "Currently signed in as samedsdad@mail.com"
     end
   end
@@ -34,7 +29,7 @@ feature "sign in" do
     end
 
     scenario "user can login" do
-      click_link "Logout"
+      click_link "Sign out"
       visit "/"
       fill_in "Email", with: "samedsdad@mail.com"
       fill_in "Password", with: "password"
@@ -43,7 +38,7 @@ feature "sign in" do
     end
 
     scenario "user can see sign out link" do
-      expect(page).to have_link "Logout"
+      expect(page).to have_link "Sign out"
     end
   end
 end
