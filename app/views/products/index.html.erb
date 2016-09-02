@@ -2,14 +2,13 @@
   <%= text_field_tag :search, params[:search], placeholder: "Search products" %>
   <%= submit_tag "Search" %>
 <% end %>
-
+<%= link_to 'Add a product', new_user_product_path %>
 <% if @products.any? %>
   <% @products.each do |product| %>
-    <%= product.name %>
-    <%= link_to "Edit #{product.name}", edit_user_product_path(current_user, product) %>
-    <%= link_to "Delete #{product.name}", user_product_path(current_user, product), method: :delete %>
+  <div class="list-group">
+    <a class="list-group-item list-group-item-action active"><%= product.name %></a>
+    <%= link_to "Edit #{product.name}", edit_user_product_path(current_user, product), class: "list-group-item-text" %> |
+    <%= link_to "Delete #{product.name}", user_product_path(current_user, product), method: :delete, class: "list-group-item-text"%>
+  </div>
   <% end %>
 <% end %>
-
-
-<%= link_to 'Add a product', new_user_product_path %>
