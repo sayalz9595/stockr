@@ -1,9 +1,15 @@
-<% if current_user.stock %>
+<div class='container'>
+  <%= link_to 'Add stock', new_user_stock_path(current_user) %>
+  <hr>
+  <% if current_user.stock %>
   <% if current_user.stock.products.any? %>
     <% current_user.stock.products.each do |product| %>
+      <div class="list-group">
       <%= product.name %>
+    </div>
     <% end %>
   <% end %>
 <% end %>
 
-<%= link_to 'Add stock', new_user_stock_path(current_user) %>
+
+</div>

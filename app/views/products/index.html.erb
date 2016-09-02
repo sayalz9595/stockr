@@ -1,14 +1,27 @@
+<div class="container">
+
+  <%= link_to 'Add a product', new_user_product_path%>
+  <br>
+  <br>
+
 <%= form_tag(user_products_path(current_user), :method => "get", id: "search-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search products" %>
-  <%= submit_tag "Search" %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
-<%= link_to 'Add a product', new_user_product_path %>
+<br>
+
+
+
+
+
 <% if @products.any? %>
   <% @products.each do |product| %>
   <div class="list-group">
-    <a class="list-group-item list-group-item-action active"><%= product.name %></a>
+    <div><%= product.name %></div>
     <%= link_to "Edit #{product.name}", edit_user_product_path(current_user, product), class: "list-group-item-text" %> |
     <%= link_to "Delete #{product.name}", user_product_path(current_user, product), method: :delete, class: "list-group-item-text"%>
+    <hr>
   </div>
   <% end %>
 <% end %>
+</div>
