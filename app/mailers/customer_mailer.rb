@@ -9,8 +9,11 @@ default to: "test@mail.com"
     @greeting = "Hi"
     @user = user
     if @user.customers.any?
-
-      mail( to: @user.customers.first.email, subject: "#{@user.email} Stock Update", from: @user.email )
+      @emails = []
+      @user.customers.each do |customer|
+        @emails << customer.email
+      end
+        mail( to: @user.email, bcc: @emails, subject: "#{@user.email} Stock Update", from: @user.email)
     end
   end
 end

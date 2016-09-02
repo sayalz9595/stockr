@@ -15,4 +15,9 @@
     <%= link_to "Delete #{customer.name}", user_customer_path(current_user, customer), method: :delete, class: "list-group-item-text" %>
   <% end %>
 <% end %>
+
+
+<%= link_to 'Add a customer', new_user_customer_path(current_user) %>
+<%= link_to 'Send stock update', send_stock_update_user_customer_path(current_user, 1)%>
+
 </div>

@@ -1,4 +1,8 @@
-CustomerMailer#stock_update
+Stock Update for <%= DateTime.now.to_date %>
 
-<%= @greeting %>, 
-<%= @user.email %>, has updated their stock, go buy stuff!
+<%= @greeting %>,
+
+<%= @user.email %> has updated their stock, go buy stuff!
+<% @user.stock.products.each do |product|%>
+  <%= product.name %>
+<% end %>
