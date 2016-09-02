@@ -34,6 +34,7 @@ class CustomersController < ApplicationController
 
   def send_stock_update
     current_user.stock_update
+    flash[:notice] = "Successfully emailed stock update"
     redirect_to user_customers_path
   end
 
