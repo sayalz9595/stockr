@@ -10,7 +10,6 @@ RSpec.describe CustomerMailer, type: :mailer do
 
       let!(:mail) { described_class.stock_update(user).deliver_now }
 
-
     it "renders the headers" do
       # byebug
       expect(mail.to).to eq(["richard@test.com"])

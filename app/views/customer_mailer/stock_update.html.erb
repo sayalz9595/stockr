@@ -1,7 +1,11 @@
-<h1>CustomerMailer#stock_update</h1>
+<h1>Stock Update for <%= DateTime.now.to_date %> </h1>
 
 <p>
-  <%= @greeting %>,
-  <%= @user.email %>, has updated their stock, go buy stuff!
+  <%= @greeting %>, <br />
+  <%= @user.email %> has updated their stock, go buy stuff! <br />
+  <% @user.stock.products.each do |product|%>
+    <%= product.name %> <br />
+  <% end %>
+
 
 </p>

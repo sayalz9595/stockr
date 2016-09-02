@@ -8,10 +8,12 @@ default to: "test@mail.com"
   def stock_update(user)
     @greeting = "Hi"
     @user = user
-    #  byebug
     if @user.customers.any?
-
-      mail( to: @user.customers.first.email, subject: "#{@user.email} Stock Update", from: @user.email )
+      @emails = []
+      @user.customers.each do |customer|
+        @emails << customer.email
+      end
+        mail( to: @user.email, bcc: @emails, subject: "#{@user.email} Stock Update", from: @user.email)
     end
   end
 end
