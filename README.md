@@ -47,6 +47,30 @@ Mockups
 
 Demonstration
 -------------
+![1](https://cloud.githubusercontent.com/assets/18379191/18225584/fab6d716-71ed-11e6-8347-8ff95c315346.png)
+![2](https://cloud.githubusercontent.com/assets/18379191/18225585/fab8ce5e-71ed-11e6-9a3c-dd7377a30acd.png)
+
+Range of products
+-----------------
+![3](https://cloud.githubusercontent.com/assets/18379191/18225586/fab98d3a-71ed-11e6-8463-6e173aab88cf.png)
+![4](https://cloud.githubusercontent.com/assets/18379191/18225587/fab9e0fa-71ed-11e6-9ce8-68d9ba95e23b.png)
+![5](https://cloud.githubusercontent.com/assets/18379191/18225589/fabe0270-71ed-11e6-9706-2ee6d08452ed.png)
+![6](https://cloud.githubusercontent.com/assets/18379191/18225588/fabae482-71ed-11e6-85a4-b580bc7ca518.png)
+
+Update stock list
+-----------------
+![8](https://cloud.githubusercontent.com/assets/18379191/18225590/fac81c06-71ed-11e6-93c1-0c82daa4bd8d.png)
+![9](https://cloud.githubusercontent.com/assets/18379191/18225591/facbe5c0-71ed-11e6-83da-ade173c3ab4f.png)
+
+Notify customers
+---------------
+![12](https://cloud.githubusercontent.com/assets/18379191/18225594/fad0f5d8-71ed-11e6-8e4a-9b290135240a.png)
+![13](https://cloud.githubusercontent.com/assets/18379191/18225595/fad2d8e4-71ed-11e6-8f61-315af02fdc4b.png)
+![14](https://cloud.githubusercontent.com/assets/18379191/18225596/fad9c622-71ed-11e6-99c2-47a43e3db9cd.png)
+
+Customer email
+--------------
+![15 stockr email](https://cloud.githubusercontent.com/assets/18379191/18225597/fade48c8-71ed-11e6-9979-18809e1d8731.PNG)
 
 Technologies
 ------------
