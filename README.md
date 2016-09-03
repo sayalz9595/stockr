@@ -1,5 +1,7 @@
 Stockr
 ======
+[![Coverage Status](https://coveralls.io/repos/github/SamedYalniz/stockr/badge.svg?branch=master)](https://coveralls.io/github/SamedYalniz/stockr?branch=master)
+
 This project was a three day exercise ("Makerthon") in our 9th week of the Makers Academy bootcamp. It is a Ruby on Rails application that allows a food wholeseller to update their current stock and easily send their customers an updated list via e-mail.
 
 Members
