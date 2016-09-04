@@ -10,6 +10,7 @@ Members
 * Jose - https://github.com/joseck0510
 * Ross - https://github.com/SlipperyJ
 * Samed - https://github.com/SamedYalniz
+* Zee - https://github.com/mzishtiaq
 
 Installation
 ------------
