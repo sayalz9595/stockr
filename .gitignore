@@ -14,3 +14,6 @@
 .byebug_history
 .env
 /coverage
+.flooignore
+.floo
+.idea/
